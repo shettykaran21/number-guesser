@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-white: #f8f9fa;
+  --primary-black: #212529;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: var(--primary-white);
+  color: var(--primary-black);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+p {
+  padding: 1rem 0;
+}
+
+input {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  outline: none;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* ----Utilities---- */
+.container {
+  margin: 0 auto;
+  height: 100vh;
+  max-width: 1200px;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.dark-mode {
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+.switch {
+  position: relative;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--primary-black);
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--primary-white);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--primary-white);
+}
+
+input:checked + .slider::before {
+  background-color: var(--primary-black);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
